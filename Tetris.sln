@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris", "Tetris\Tetris.csproj", "{C7F45306-7D01-4E98-B933-F7E7DB52894A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tetris", "Tetris\Tetris.csproj", "{C7F45306-7D01-4E98-B933-F7E7DB52894A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{80D2AC70-843B-4439-82AC-49CF890FBB4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C7F45306-7D01-4E98-B933-F7E7DB52894A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F45306-7D01-4E98-B933-F7E7DB52894A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7F45306-7D01-4E98-B933-F7E7DB52894A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D2AC70-843B-4439-82AC-49CF890FBB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D2AC70-843B-4439-82AC-49CF890FBB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D2AC70-843B-4439-82AC-49CF890FBB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D2AC70-843B-4439-82AC-49CF890FBB4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
