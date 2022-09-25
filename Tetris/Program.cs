@@ -13,12 +13,12 @@ namespace Tetris
             int y1 = 3;
             char c1 = '*';
 
-            Drow(x1, y1, c1);
+            Draw(x1, y1, c1);
 
             Console.ReadKey();
         }
 
-        static void Drow(int x, int y, char c)
+        static void Draw(int x, int y, char c)
         {
             Console.SetCursorPosition(x, y);
             Console.Write(c);
