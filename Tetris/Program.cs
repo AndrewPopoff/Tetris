@@ -12,20 +12,12 @@ namespace Tetris
             Point p1 = new Point(2,3,'*');
             p1.Draw();
 
-            Point p2 = new Point()
-            {
-                x = 12,
-                y = 23,
-                c = '*'
-            }
-            ;
-            p2.Draw();
+            Figure[] figures = new Figure[2];
+            figures[0] = new Square(10, 20, '*');
+            figures[1] = new Stick(7, 7, '#');
 
-            Square s = new Square(10, 20, '*');
-            s.Draw();
-
-            Stick st = new Stick(7, 7, '#');
-            st.Draw();
+            figures[0].Draw();
+            figures[1].Draw();
 
             Console.ReadKey();
         }
