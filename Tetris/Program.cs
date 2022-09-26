@@ -21,6 +21,9 @@ namespace Tetris
             ;
             p2.Draw();
 
+            Square s = new Square(10, 20, '*');
+            s.Draw();
+
             Console.ReadKey();
         }
 
