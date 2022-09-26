@@ -24,6 +24,9 @@ namespace Tetris
             Square s = new Square(10, 20, '*');
             s.Draw();
 
+            Stick st = new Stick(7, 7, '#');
+            st.Draw();
+
             Console.ReadKey();
         }
 
