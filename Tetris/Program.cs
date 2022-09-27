@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Tetris
 {
@@ -9,15 +10,37 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            Point p1 = new Point(2,3,'*');
-            p1.Draw();
+            Square s = new Square(2, 5, '*');
+            s.Draw();
+            Thread.Sleep(500);
 
-            Figure[] figures = new Figure[2];
-            figures[0] = new Square(10, 20, '*');
-            figures[1] = new Stick(7, 7, '#');
+            s.Hide();
+            s.Move(Direction.LEFT);
+            s.Draw();
+            Thread.Sleep(500);
 
-            figures[0].Draw();
-            figures[1].Draw();
+            s.Hide();
+            s.Move(Direction.RIGHT);
+            s.Draw();
+            Thread.Sleep(500);
+            s.Hide();
+            s.Move(Direction.DOWN);
+            s.Draw();
+            Thread.Sleep(500);
+            s.Hide();
+            s.Move(Direction.RIGHT);
+            s.Draw();
+
+
+            //Point p1 = new Point(2,3,'*');
+            //p1.Draw();
+
+            //Figure[] figures = new Figure[2];
+            //figures[0] = new Square(10, 20, '*');
+            //figures[1] = new Stick(7, 7, '#');
+
+            //figures[0].Draw();
+            //figures[1].Draw();
 
             Console.ReadKey();
         }

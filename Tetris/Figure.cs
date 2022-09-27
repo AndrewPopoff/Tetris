@@ -12,5 +12,21 @@ namespace Tetris
             foreach (Point p in points)
                 p.Draw();
         }
+        public void Move(Direction d)
+        {
+            foreach(Point p in points)
+            {
+                p.Move(d);
+            }
+        }
+        public void Hide()
+        {
+            foreach(Point p in points)
+            {
+                p.Hide();
+            }
+                
+        }
+
     }
 }
