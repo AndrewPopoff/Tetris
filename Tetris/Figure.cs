@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tetris
 {
-    abstract class Figure
+    public abstract class Figure
     {
         public Point[] points = new Point[4];
         public void Draw()

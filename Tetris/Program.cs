@@ -10,7 +10,10 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            Figure s = new Stick(2, 5, '*');
+            FigureGenerator gen = new FigureGenerator(20, 0, '*');
+            Figure s = gen.GetNewFigure();
+
+            //Figure s = new Stick(2, 5, '*');
             s.Draw();
             Thread.Sleep(500);
 
