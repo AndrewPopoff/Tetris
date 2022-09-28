@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tetris
 {
-    class Figure
+    abstract class Figure
     {
         public Point[] points = new Point[4];
         public void Draw()
@@ -19,6 +19,9 @@ namespace Tetris
                 p.Move(d);
             }
         }
+
+        public abstract void Rotate();
+
         public void Hide()
         {
             foreach(Point p in points)
