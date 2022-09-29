@@ -20,10 +20,19 @@ namespace Tetris
             this.y = y;
             this.c = c;
         }
+
+        public Point(Point point)
+        {
+            x = point.x;
+            y = point.y;
+            c = point.c;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(c);
+            Console.SetCursorPosition(0, 0);
         }
 
         public void Move(Direction d)

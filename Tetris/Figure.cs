@@ -6,21 +6,59 @@ namespace Tetris
 {
     public abstract class Figure
     {
-        public Point[] points = new Point[4];
+        const int FIGURE_SIZE = 4;
+        public Point[] points = new Point[FIGURE_SIZE];
         public void Draw()
         {
             foreach (Point p in points)
                 p.Draw();
         }
-        public void Move(Direction d)
+        public void TryMove(Direction dir)
         {
             Hide();
-            foreach(Point p in points)
-            {
-                p.Move(d);
-            }
+            var clone = Clone();
+            Move(clone,dir);
+            if (VerifyPosition(clone))
+                points = clone;
             Draw();
+
         }
+
+        private bool VerifyPosition(Point[] pList)
+        {
+            foreach(Point p in pList)
+            {
+                if (p.x < 0 || p.y < 0 || p.x >= 40 || p.y >= 30)
+                    return false;
+            }
+            return true; 
+        }
+
+        public void Move(Point[] pList, Direction dir)
+        {
+            foreach (Point p in pList)
+            {
+                p.Move(dir);
+            }
+        }
+
+        private Point[] Clone()
+        {
+            var newPoints = new Point[FIGURE_SIZE];
+            for (int i = 0; i < FIGURE_SIZE; i++)
+                newPoints[i] = new Point(points[i]);
+            return newPoints;
+        }
+
+        //public void Move(Direction d)
+        //{
+        //    Hide();
+        //    foreach(Point p in points)
+        //    {
+        //        p.Move(d);
+        //    }
+        //    Draw();
+        //}
 
         public abstract void Rotate();
 
