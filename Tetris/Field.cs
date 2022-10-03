@@ -42,7 +42,7 @@ namespace Tetris
         static Field()
         {
             _heap = new bool[Height][];
-            for (int i = 0; i < Width; i++)
+            for (int i = 0; i < Height; i++)
                 _heap[i] = new bool[Width];
         }
 
