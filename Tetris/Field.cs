@@ -37,5 +37,26 @@ namespace Tetris
             }
         }
 
+        private static bool[][] _heap;
+
+        static Field()
+        {
+            _heap = new bool[Height][];
+            for (int i = 0; i < Width; i++)
+                _heap[i] = new bool[Width];
+        }
+
+        public static void AddFigure(Figure figure)
+        {
+            foreach(Point p in figure.Points)
+            {
+                _heap[p.Y][p.X] = true;
+            }
+        }
+
+        public static bool CheckStrike(Point p)
+        {
+            return _heap[p.Y][p.X];
+        }
     }
 }
