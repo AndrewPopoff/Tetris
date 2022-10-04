@@ -11,7 +11,7 @@ namespace Tetris
             Console.SetWindowSize(Field.Width, Field.Height);
             Console.SetBufferSize(Field.Width, Field.Height);
 
-            Field.Width = 50; // установка новой ширины
+            //Field.Width = 50; // установка новой ширины
 
             gen = new FigureGenerator(Field.Width / 2, 0, '*');
             Figure currentFigure = gen.GetNewFigure();
@@ -29,7 +29,7 @@ namespace Tetris
 
         private static bool ProcessResult(Result result, ref Figure currentFigure)
         {
-            if (result == Result.HEAP_STRIKE || result == Result.BORDER_STRIKE)
+            if (result == Result.HEAP_STRIKE || result == Result.DOWN_BORDER_STRIKE)
             {
                 Field.AddFigure(currentFigure);
                 currentFigure = gen.GetNewFigure();
