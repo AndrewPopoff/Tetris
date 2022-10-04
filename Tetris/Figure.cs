@@ -13,34 +13,47 @@ namespace Tetris
             foreach (Point p in Points)
                 p.Draw();
         }
-        public void TryMove(Direction dir)
+        public Result TryMove(Direction dir)
         {
             Hide();
             var clone = Clone();
             Move(clone,dir);
-            if (VerifyPosition(clone))
+            Result result = VerifyPosition(clone);
+            if (result == Result.SUCCESS)
                 Points = clone;
             Draw();
+
+            return result;
         }
 
-        public void TryRotate()
+        public Result TryRotate()
         {
             Hide();
             var clone = Clone();
             Rotate(clone);
-            if (VerifyPosition(clone))
+            var result = VerifyPosition(clone);
+            if (result == Result.SUCCESS)
                 Points = clone;
             Draw();
+
+            return result;
         }
 
-        private bool VerifyPosition(Point[] pList)
+        private Result VerifyPosition(Point[] pList)
         {
             foreach(Point p in pList)
             {
-                if (p.X < 0 || p.Y < 0 || p.X >= Field.Width || p.Y >= Field.Height)
-                    return false;
+                if (p.Y >= Field.Height)
+                    return Result.DOWN_BORDER_STRIKE;
+
+                if (p.X < 0 || p.Y < 0 || p.X >= Field.Width)
+                    return Result.BORDER_STRIKE;
+
+                if (Field.CheckStrike(p))
+                    return Result.HEAP_STRIKE;
             }
-            return true; 
+
+            return Result.SUCCESS; 
         }
 
         public void Move(Point[] pList, Direction dir)
