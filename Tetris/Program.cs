@@ -10,7 +10,7 @@ namespace Tetris
             Console.SetWindowSize(Field.Width, Field.Height);
             Console.SetBufferSize(Field.Width, Field.Height);
 
-            Field.Width = 50;
+            Field.Width = 50; // установка новой ширины
 
             FigureGenerator gen = new FigureGenerator(Field.Width / 2, 0, '*');
             Figure currentFigure = gen.GetNewFigure();
