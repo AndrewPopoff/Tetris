@@ -46,7 +46,7 @@ namespace Tetris
                 if (p.Y >= Field.Height)
                     return Result.DOWN_BORDER_STRIKE;
 
-                if (p.X < 0 || p.Y < 0 || p.X >=Field.Width)
+                if (p.X < 0 || p.X >= Field.Width)
                     return Result.BORDER_STRIKE;
 
                 if (Field.CheckStrike(p))
