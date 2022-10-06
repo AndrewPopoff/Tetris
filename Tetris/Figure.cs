@@ -72,6 +72,11 @@ namespace Tetris
             return newPoints;
         }
 
+        public bool IsOnTop()
+        {
+            return Points[0].Y == 0;
+        }
+
 
         //public void Move(Direction d)
         //{
