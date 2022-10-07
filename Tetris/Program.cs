@@ -6,8 +6,8 @@ namespace Tetris
 {
     class Program
     {
-        private static FigureGenerator gen = null;
-        private static Figure currentFigure = null;
+        private static FigureGenerator gen;
+        private static Figure currentFigure;
 
         const int TIMER_INTERVAL = 500;
         static System.Timers.Timer timer;
@@ -16,12 +16,9 @@ namespace Tetris
 
         static void Main(string[] args)
         {
-            Console.SetWindowSize(Field.Width + 1, Field.Height);
-            Console.SetBufferSize(Field.Width + 1, Field.Height);
+            DrawerProvider.Drawer.InitField();
 
-            Test();
-
-            gen = new FigureGenerator(Field.Width / 2, 0, Drawer.DEFAULT_SYMBOL);
+            gen = new FigureGenerator(Field.Width / 2, 0);
             currentFigure = gen.GetNewFigure();
 
             SetTimer();
@@ -37,11 +34,6 @@ namespace Tetris
                     Monitor.Exit(_lockObject);
                 }
             }
-        }
-
-        private static void Test()
-        {
-            DrawerProvider.Drawer.DrawPoint(10, 4);
         }
 
         private static void SetTimer()
@@ -83,8 +75,7 @@ namespace Tetris
 
         private static void WriteGameOver()
         {
-            Console.SetCursorPosition(Field.Width / 2 - 8, Field.Height / 2);
-            Console.WriteLine("G A M E   O V E R");
+            DrawerProvider.Drawer.WriteGameOver();
         }
 
         private static Result HandleKey(Figure currentFigure, ConsoleKeyInfo keyInfo)

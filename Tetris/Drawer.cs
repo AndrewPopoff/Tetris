@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+
+// НЕ ИСПОЛЬЗУЕТСЯ БОЛЕЕ
+
 namespace Tetris
 {
     public static class Drawer
